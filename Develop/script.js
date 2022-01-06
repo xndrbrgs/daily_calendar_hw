@@ -13,15 +13,15 @@ setInterval(displayTime, 1000);
 // Time assigned for each row
 
 function timeNow() {
-    var current = moment().hours();
+    var currentTime = moment().hours();
     var hoursDay = $('.time-block'); 
 
     hoursDay.each(function() {
         var hours = parseInt($(this).attr('id'));
 
-        if (hours === current) {
+        if (hours === currentTime) {
             $(this).children('.col-sm-10').attr('class', 'present col-sm-10 description');
-        } else if (current > hours) {
+        } else if (currentTime > hours) {
             $(this).children('.col-sm-10').attr('class', 'past col-sm-10 description');
         } else {
             $(this).children('.col-sm-10').attr('class', 'future col-sm-10 description');
@@ -49,4 +49,3 @@ $('#14 textarea').val(localStorage.getItem('14').replace());
 $('#15 textarea').val(localStorage.getItem('15').replace());
 $('#16 textarea').val(localStorage.getItem('16').replace());
 $('#17 textarea').val(localStorage.getItem('17').replace());
-
