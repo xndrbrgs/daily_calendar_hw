@@ -33,12 +33,20 @@ timeNow();
 
 // Local Storage
 
-button.on('click', function(event) {
+$('.saveBtn').on('click', function(event) {
     event.preventDefault();
     var newTextEl = $(this).siblings('.col-sm-10').val().replace();
     var parentEl = $(this).parent().attr('id'); 
     localStorage.setItem(parentEl, JSON.stringify(newTextEl)); 
 })
 
-
+$('#9 textarea').val(localStorage.getItem('9').replace());
+$('#10 textarea').val(localStorage.getItem('10').replace());
+$('#11 textarea').val(localStorage.getItem('11').replace());
+$('#12 textarea').val(localStorage.getItem('12').replace());
+$('#13 textarea').val(localStorage.getItem('13').replace());
+$('#14 textarea').val(localStorage.getItem('14').replace());
+$('#15 textarea').val(localStorage.getItem('15').replace());
+$('#16 textarea').val(localStorage.getItem('16').replace());
+$('#17 textarea').val(localStorage.getItem('17').replace());
 
