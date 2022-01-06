@@ -31,3 +31,14 @@ function timeNow() {
 
 timeNow();
 
+// Local Storage
+
+button.on('click', function(event) {
+    event.preventDefault();
+    var newTextEl = $(this).siblings('.col-sm-10').val().replace();
+    var parentEl = $(this).parent().attr('id'); 
+    localStorage.setItem(parentEl, JSON.stringify(newTextEl)); 
+})
+
+
+
