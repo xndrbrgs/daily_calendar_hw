@@ -15,5 +15,19 @@ setInterval(displayTime, 1000);
 function timeNow() {
     var current = moment().hours();
     var hoursDay = $('.time-block'); 
+
+    hoursDay.each(function() {
+        var hours = parseInt($(this).attr('id'));
+
+        if (hours === current) {
+            $(this).children('.col-sm-10').attr('class', 'present col-sm-10 description');
+        } else if (current > hours) {
+            $(this).children('.col-sm-10').attr('class', 'past col-sm-10 description');
+        } else {
+            $(this).children('.col-sm-10').attr('class', 'future col-sm-10 description');
+        }
+    })
 }
+
+timeNow();
 
